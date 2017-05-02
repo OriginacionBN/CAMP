@@ -84,6 +84,7 @@ function Validar(lista){
 
         if(lista[8] == "Completado"){
             var dictamen = document.getElementById('dictamen').value;
+            document.getElementById('resultado').style.display = '';
             document.getElementById('resultado').innerHTML = "El cliente: " + dictamen;
             var bloqueo = document.getElementById("bloqueo");
             bloqueo.disabled = true;
