@@ -50,7 +50,7 @@ function Validar(lista){
         document.getElementById("oficina").disabled = false;
 
         document.getElementById("idFila").value = lista[0];
-        document.getElementById("buro").value = lista[1];
+        document.getElementById("buro").value = "G" +lista[1];
         document.getElementById("tipoCliente").value = lista[2];
         document.getElementById("nroEnt").value = lista[3];
         document.getElementById("razonSocial").value = lista[4];
