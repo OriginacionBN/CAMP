@@ -13,11 +13,13 @@ function EnviarCalculadora(){
         alert("Ha indicado que el cliente es Régimen General. \n Debería ir a la calculadora. Gracias");
         document.getElementById("validado").style.display = 'none';
         document.getElementById("btn_grabar").style.display = 'none';
+        document.getElementById("btn_Calculadora").style.display = '';
         document.getElementById("boton_finalizar").style.display = 'none';
         document.getElementById("boton_inicio").style.display = '';
     }else{
         document.getElementById("validado").style.display = '';
         document.getElementById("btn_grabar").style.display = '';
+        document.getElementById("btn_Calculadora").style.display = 'none';
         document.getElementById("boton_finalizar").style.display = '';
         document.getElementById("boton_inicio").style.display = 'none';
     }
