@@ -2433,7 +2433,6 @@ function CompletarLP(lista) {
     var codigos = lista[1];
     var data = lista[2];
     for (var i = 0; i < codigos.length; i++) {
-        etiquetas.push(codigos[i]);
         document.getElementById(codigos[i]).value = data[i];
         document.getElementById(codigos[i]).innerHTML = data[i];
     }
@@ -2447,7 +2446,6 @@ function CompletarCP(lista) {
     var codigos = lista[1];
     var data = lista[2];
     for (var i = 0; i < codigos.length; i++) {
-        etiquetas.push(codigos[i]);
         var codigo = codigos[i];
         var dato = data[i];
         if (codigo.indexOf("Tipo_Prod_CP_") != -1) {
