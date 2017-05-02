@@ -414,8 +414,6 @@ function getDatosCliente() {
 
 function getIngresos(){
     var lista = [];
-    lista.push(document.getElementById("vtas_enero").value);
-    lista.push(document.getElementById("vtas_febrero").value);
     lista.push(document.getElementById("Ventas_Total").value);
     lista.push(document.getElementById("margen_bruto").value);
     lista.push(document.getElementById("margen_bruto_referencial").value);
