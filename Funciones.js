@@ -86,12 +86,12 @@ function Validar(lista){
 function InicializarActividad(actividad){
     actividadG = actividad[0];
     excluido = actividad[1];
-    document.getElementById("actividadG").disabled = false;
-    document.getElementById("actividadG").options[0] = new Option("");
+    document.getElementById("actividad").disabled = false;
+    document.getElementById("actividad").options[0] = new Option("");
     for (i = 0; i < actividadG.length; i++) {
-        document.getElementById("actividadG").options[i + 1] = new Option(actividadG[i], actividadG[i]);
+        document.getElementById("actividad").options[i + 1] = new Option(actividadG[i], actividadG[i]);
     }
-    document.getElementById("actividadG").disabled = true;
+    document.getElementById("actividad").disabled = true;
 }
 function InicializarOficinas(oficina){
     oficinas = oficina;
