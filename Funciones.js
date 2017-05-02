@@ -2349,7 +2349,6 @@ function InformacionGrabar() {
         listaTodo.push(getEgresos());
         listaTodo.push(getPatrimonioInmueble());
         listaTodo.push(getPatrimonioVehMaq());
-        listaTodo.push(getFEN());
         alert("Se grabaron los datos ingresados");
         return listaTodo;
     }
@@ -2390,7 +2389,6 @@ function InformacionFinalizar() {
             listaTodo.push(getEgresos());
             listaTodo.push(getPatrimonioInmueble());
             listaTodo.push(getPatrimonioVehMaq());
-            listaTodo.push(getFEN());
             alert(dictamen);
             return listaTodo;
         }else{
