@@ -2472,7 +2472,6 @@ function CompletarPVM(lista) {
             }
             document.getElementById(codigo).selectedIndex = index;
         } else {
-            alert(codigo + "***" + data[i])
             document.getElementById(codigo).value = data[i];
             document.getElementById(codigo).innerHTML = data[i];
         }
