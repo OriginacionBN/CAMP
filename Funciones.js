@@ -83,6 +83,7 @@ function Validar(lista){
         }
 
         if(lista[8] == "Completado"){
+            document.getElement('resultado').style.display = '';
             var bloqueo = document.getElementById("bloqueo");
             bloqueo.disabled = true;
         }else{
@@ -132,6 +133,7 @@ function Dictaminar(){
         dictamen = "No califica";
     }
     document.getElementById("dictamen").value = dictamen;
+    return dictamen;
 }
 function EvaluarFiltros1(){
     var estado = true;
