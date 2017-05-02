@@ -359,8 +359,6 @@ function getDatosCliente() {
 }
 function getIngresos(){
     var lista = [];
-    lista.push(document.getElementById("vtas_enero").value);
-    lista.push(document.getElementById("vtas_febrero").value);
     lista.push(document.getElementById("ingreso_mes_1").value);
     lista.push(document.getElementById("ingreso_mes_2").value);
     lista.push(document.getElementById("ingreso_mes_3").value);
