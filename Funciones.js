@@ -50,13 +50,17 @@ function Validar(lista){
             var dc = datos[0];
             CompletarGeneral(dc);
             //Propuesta de Financiamiento
-            var patInm = datos[2];
+            var lp = datos[1];
+            CompletarLP(lp);
+            var cp = datos[2];
+            CompletarCP(cp);
+            var patInm = datos[3];
             CompletarPI(patInm);
-            var patVeh = datos[3];
+            var patVeh = datos[4];
             CompletarPVM(patVeh);
-            var ing = datos[4];
+            var ing = datos[5];
             CompletarIngresos(ing);
-            var egr = datos[5];
+            var egr = datos[6];
             CompletarEgresos(egr);
             
         }
@@ -2420,6 +2424,63 @@ function CompletarGeneral(lista) {
         }
     }
     document.getElementById("analista").disabled = true;
+}
+function CompletarLP(lista) {
+    var cantidad = lista[0];
+    for (var i = 0; i < cantidad; i++) {
+        Agregar_Financimiento_LP();
+    }
+    var codigos = lista[1];
+    var data = lista[2];
+    for (var i = 0; i < codigos.length; i++) {
+        etiquetas.push(codigos[i]);
+        document.getElementById(codigos[i]).value = data[i];
+        document.getElementById(codigos[i]).innerHTML = data[i];
+    }
+}
+function CompletarCP(lista) {
+    var cantidad = lista[0];
+
+    for (var i = 0; i < cantidad; i++) {
+        Agregar_Financimiento_CP();
+    }
+    var codigos = lista[1];
+    var data = lista[2];
+    for (var i = 0; i < codigos.length; i++) {
+        etiquetas.push(codigos[i]);
+        var codigo = codigos[i];
+        var dato = data[i];
+        if (codigo.indexOf("Tipo_Prod_CP_") != -1) {
+            var index = 0;
+            if (dato == "Financiamiento de Importación") {
+                index = 1;
+            } else if (dato == "Financiamiento de Exportación") {
+                index = 2;
+            } else if (dato == "Préstamo para capital de trabajo") {
+                index = 3;
+            } else if (dato == "Tarjeta capital de trabajo") {
+                //index = 4;
+                index = 1;
+            } else if (dato == "Descuento de letra/factura negociable") {
+                index = 5;
+            } else if (dato == "Tarjeta Empresarial") {
+                index = 6;
+            } else if (dato == "Préstamo para adquisición de bienes muebles pequeños") {
+                index = 7;
+            } else if (dato == "Subrogación de deuda") {
+                index = 8;
+            } else if (dato == "Incremento de línea de TKT") {
+                index = 9;
+            } else if (dato == "Incremento de línea de T/C") {
+                index = 10;
+            } else if (dato == "Otro") {
+                index = 11;
+            }document.getElementById(codigo).selectedIndex = index;
+        } else {
+            document.getElementById(codigo).value = data[i];
+            document.getElementById(codigo).innerHTML = data[i];
+        }
+    }
 }
 function CompletarPI(lista) {
     var cantidad = lista[0];
