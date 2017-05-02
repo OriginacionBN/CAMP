@@ -8,7 +8,6 @@ function Inicializar() {
     document.getElementById("fechaVisita").innerHTML = t;
 }
 function Validar(lista){
-    alert(lista);
     //En la condicion debería aparecer que también se excluyan los del campo excluido lista[6]
     if(lista[0] !=0){
         document.getElementById("validado").style.display = '';
