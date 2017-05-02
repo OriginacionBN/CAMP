@@ -2436,6 +2436,7 @@ function CompletarLP(lista) {
         document.getElementById(codigos[i]).value = data[i];
         document.getElementById(codigos[i]).innerHTML = data[i];
     }
+    Calcular_Propuestas_LP();
 }
 function CompletarCP(lista) {
     var cantidad = lista[0];
@@ -2479,6 +2480,7 @@ function CompletarCP(lista) {
             document.getElementById(codigo).innerHTML = data[i];
         }
     }
+    Calcular_Propuestas_CP();
 }
 function CompletarPI(lista) {
     var cantidad = lista[0];
