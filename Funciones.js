@@ -49,8 +49,7 @@ function Validar(lista){
             var datos = lista[9];
             var dc = datos[0];
             CompletarGeneral(dc);
-            var fen = datos[1];
-            CompletarFEN(fen);
+            //Propuesta de Financiamiento
             var patInm = datos[2];
             CompletarPI(patInm);
             var patVeh = datos[3];
