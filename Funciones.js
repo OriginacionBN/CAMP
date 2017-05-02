@@ -8,7 +8,9 @@ function Inicializar() {
     document.getElementById("fechaVisita").innerHTML = t;
 }
 function Validar(lista){
-    if(lista[1] !=0){
+    alert(lista);
+    //En la condicion debería aparecer que también se excluyan los del campo excluido lista[6]
+    if(lista[0] !=0){
         document.getElementById("validado").style.display = '';
         document.getElementById("btn_grabar").style.display = '';
         document.getElementById("boton_finalizar").style.display = '';
@@ -23,11 +25,9 @@ function Validar(lista){
         document.getElementById("actividad").disabled = false;
         document.getElementById("actEspecifica").disabled = false;
         document.getElementById("nroPtosVta").disabled = false;
-        document.getElementById("nroAlmacenes").disabled = false;
+        document.getElementById("nroTalleres").disabled = false;
+
         document.getElementById("edadRL").disabled = false;
-        document.getElementById("fijo").disabled = false;
-        document.getElementById("celular").disabled = false;
-        document.getElementById("correo").disabled = false;
 
         document.getElementById("nroEnt").disabled = false;
         document.getElementById("buro").disabled = false;
@@ -35,50 +35,19 @@ function Validar(lista){
         document.getElementById("tipoCliente").disabled = false;
         document.getElementById("oficina").disabled = false;
 
-        document.getElementById("idFila").value = lista[1];
+        document.getElementById("idFila").value = lista[0];
+        document.getElementById("buro").value = lista[1];
         document.getElementById("tipoCliente").value = lista[2];
-        document.getElementById("razonSocial").value = lista[3];
-        document.getElementById("ubicacion").value = lista[4];
-        document.getElementById("oficina").value = lista[5] + " - " + lista[6];
-        document.getElementById("codOficina").value = lista[5];
-        document.getElementById("aExp").value = lista[8];
-        document.getElementById("buro").value = lista[9];
-        document.getElementById("nroEnt").value = lista[10];
-        document.getElementById("fijo").value = lista[12];
-        document.getElementById("celular").value = lista[13];
-        document.getElementById("responsable").value = lista[14];
-        document.getElementById("correo").value = lista[15];
+        document.getElementById("nroEnt").value = lista[3];
+        document.getElementById("razonSocial").value = lista[4];
+        document.getElementById("ubicacion").value = lista[5];
+        
         document.getElementById("finalizado").value = lista[20];
 
-        var mensaje = "";
-        if(lista[16] != ""){
-            mensaje = lista[16] + "\n";
-        }
-        if(lista[17] != ""){
-            mensaje = mensaje + lista[17] + "\n";
-        }
-        if(lista[18] != ""){
-            mensaje = mensaje + lista[18] + "\n";
-        }
-        if(lista[19] != ""){
-            mensaje = mensaje + lista[19] + "\n";
-        }
-        var recomendacion = lista[23];
-        var index = 0;
-        if(recomendacion == "Prorroga Adicional"){
-            index = 1;
-        }else if(recomendacion == "Reprogramación"){
-            index = 2;
-        }else if(recomendacion == "Refinanciación"){
-            index = 3;
-        }
-        document.getElementById("SRecomendacion").selectedIndex = index;
+        var deudas = lista[7];
         
-        var deudas = lista[24];
-        CompletarCronograma(deudas);
-
-        if(lista[20] == 0 || lista[20] == 1){
-            var datos = lista[25];
+        if(lista[8] != "Por Iniciar"){
+            var datos = lista[9];
             var dc = datos[0];
             CompletarGeneral(dc);
             var fen = datos[1];
@@ -91,29 +60,26 @@ function Validar(lista){
             CompletarIngresos(ing);
             var egr = datos[5];
             CompletarEgresos(egr);
-            calcular_valor_declarado_Total();
-            Calcular_Valor_Bien_Total();
+            
         }
-        
-        Calcular_EEFF();
-        
-        if(lista[20] == 1){
+
+        if(lista[8] == "Completado"){
             var bloqueo = document.getElementById("bloqueo");
             bloqueo.disabled = true;
         }else{
+            CompletarCronograma(deudas);
+            calcular_valor_declarado_Total();
+            Calcular_Valor_Bien_Total();
+            Calcular_EEFF();
+
             document.getElementById("nroEnt").disabled = true;
             document.getElementById("buro").disabled = true;
-            document.getElementById("aExp").disabled = true;
             document.getElementById("tipoCliente").disabled = true;
-            document.getElementById("oficina").disabled = true;
             document.getElementById("ruc").disabled = true;
-        }
-        if(mensaje != ""){
-            alert(mensaje);
         }
         document.getElementById("carga").style.display = 'none';
     }else{
-        alert("El cliente no se encuentra en la base de FEN");
+        alert("El cliente no se encuentra en la base de campañas");
         document.getElementById("carga").style.display = 'none';
     }
 }
@@ -131,10 +97,10 @@ function Cargar(){
 }
 function Dictaminar(){
     var dictamen = "";
-    if(EvaluarFiltros1()){
-        dictamen = "Con capacidad de pago";
+    if(EvaluarFiltros2()){
+        dictamen = "Califica";
     }else{
-        dictamen = "Sin capacidad de pago";
+        dictamen = "No califica";
     }
     document.getElementById("dictamen").value = dictamen;
 }
@@ -162,51 +128,6 @@ function EvaluarFiltros1(){
     }
     return estado
 }
-function Preg1(){
-    var seleccion = document.getElementById("preg1").value;
-    var responsable = document.getElementById("responsable").value;
-    if(seleccion == "Si"){
-        document.getElementById("seccion_ingresos").style.display = '';
-        document.getElementById("seccion_egresos").style.display = '';
-        document.getElementById("seccion_patrimonio").style.display = '';
-        document.getElementById("seccion_estados").style.display = '';
-        document.getElementById("s_ingresos").style.display = '';
-        document.getElementById("s_egresos").style.display = '';
-        document.getElementById("s_patrimonio").style.display = '';
-        document.getElementById("s_estados").style.display = '';
-    }else if(seleccion == "No" && responsable != "Admisión"){
-        document.getElementById("seccion_ingresos").style.display = 'none';
-        document.getElementById("seccion_egresos").style.display = 'none';
-        document.getElementById("seccion_patrimonio").style.display = 'none';
-        document.getElementById("seccion_estados").style.display = 'none';
-        document.getElementById("s_ingresos").style.display = 'none';
-        document.getElementById("s_egresos").style.display = 'none';
-        document.getElementById("s_patrimonio").style.display = 'none';
-        document.getElementById("s_estados").style.display = 'none';
-    }
-}
-function Preg2(){
-    var seleccion = document.getElementById("preg2").value;
-    document.getElementById("optOpe").style.display = 'none';
-    document.getElementById("optInf").style.display = 'none';
-    if(seleccion == "Operativa"){
-        document.getElementById("optOpe").style.display = '';
-    }else if(seleccion == "Infraestructura"){
-        document.getElementById("optInf").style.display = '';
-    }
-}
-function Preg4(){
-    var seleccion = document.getElementById("preg4").value;
-    document.getElementById("optSi").style.display = 'none';
-    document.getElementById("optOtra").style.display = 'none';
-    if(seleccion == "Si"){
-        document.getElementById("optSi").style.display = '';
-        var seleccion2 = document.getElementById("Seguro").value;
-        if(seleccion2 == "Otra"){
-            document.getElementById("optOtra").style.display = '';
-        }
-    }
-}
 function EvaluarFiltros2(){
     var estado = false;
     var ventas = convNro(document.getElementById('egp_ventas').value);
@@ -226,6 +147,12 @@ function EvaluarFiltros2(){
             }
         }
     }
+    if(estado){
+        estado = EvaluarFiltros1();
+    }
+
+
+    return estado;
 }
 function Calcular_EEFF(){
     Calcular_BG();
@@ -831,9 +758,7 @@ function getGastosPersonales(){
     lista.push(document.getElementById("total_gastpersonal").value);
     return lista;
 }
-
 /******************************************************************/
-
 function getFinanciamientoLP(){
     var cant_finan_LP = convNro(document.getElementById("cant_finan_LP").value);
     var listaFinanLP = [];
@@ -1141,9 +1066,7 @@ function getRatios() {
     lista.push(CoberturaDeuda);
     return lista;
 }
-
 /*******************************************************************/
-
 function Calcular_BG() {
     Calcular_Activos();
     Calcular_Pasivos();
@@ -1465,9 +1388,7 @@ function Calcular_Porcentajes_BG() {
 
     }
 }
-
 /********************************************************************/
-
 function Calcular_EGP() {
     var ventas = convNro(document.getElementById("egp_ventas").value);
     var costo = convNro(document.getElementById("egp_costoven").value);
@@ -1591,9 +1512,7 @@ function Calcular_Porcentajes_EGP() {
         document.getElementById("egp_uneta_p").innerHTML = "";
     }
 }
-
 /********************************************************************/
-
 var TEALTC = 0.3401;
 var TEAPCCT = 0.2362;
 var TEAPC = 0.2362;
@@ -2213,9 +2132,7 @@ function Calcular_Resumen() {
     calcular_gastopersonal();
     Calcular_EEFF();
 }
-
 /******************************************************************/
-
 function getLTC(){
     var lista = [];
     var table = document.getElementById("tablaLineaTarjetaCapital");
@@ -2331,9 +2248,7 @@ function getResumen(){
 
     return lista;
 }
-
 /*******************************************************************/
-
 function CompletarCronograma(datos){
     
     AgregarLineaTarjeta();
@@ -2400,11 +2315,8 @@ function CompletarCronograma(datos){
     Calcular_Prestamo_Adquisicion_Total();
     Calcular_Prestamo_Personal_Total();
     Calcular_Tarjeta_Consumo_Total();
-
 }
-
 /******************************************************************/
-
 
 function InformacionGrabar() {
     var listaTodo = [];
@@ -2479,22 +2391,6 @@ function InformacionFinalizar() {
         return null;
     }
 }
-function getFEN(){
-    var lista = [];
-    var preg1 = document.getElementById("preg1").value;
-    lista.push(preg1);
-    var preg2 = document.getElementById("preg2").value;
-    lista.push(preg2);
-    lista.push(document.getElementById("optOpeS").value);
-    lista.push(document.getElementById("optInfS").value);
-    lista.push(document.getElementById("preg2Comen").value);
-    lista.push(document.getElementById("preg3").value);
-    lista.push(document.getElementById("preg4").value);
-    lista.push(document.getElementById("Seguro").value);
-    lista.push(document.getElementById("EspSeguro").value);
-    lista.push(document.getElementById("preg5").value);
-    return lista;
-}
 
 function CompletarGeneral(lista) {
     var codigos = lista[0];
@@ -2526,107 +2422,6 @@ function CompletarGeneral(lista) {
         }
     }
     document.getElementById("analista").disabled = true;
-}
-function CompletarFEN(lista) {
-    var codigos = lista[0];
-    var data = lista[1];
-    for (var i = 0; i < codigos.length; i++) {
-        var codigo = codigos[i];
-        var dato = data[i];
-        if (codigo.indexOf("preg1") != -1) {
-            var index = 0;
-            if (dato == "Si") {
-                index = 1;
-            } else if (dato == "No") {
-                index = 2;
-            }
-            document.getElementById(codigo).selectedIndex = index;
-        }else if (codigo.indexOf("preg2Comen") != -1) {
-            document.getElementById(codigo).value = data[i];
-            document.getElementById(codigo).innerHTML = data[i];
-        }else if (codigo.indexOf("preg2") != -1) {
-            var index = 0;
-            if (dato == "Operativa") {
-                index = 1;
-                document.getElementById('optInf').style.display = 'none';
-                document.getElementById('optOpe').style.display = '';
-            } else if (dato == "Infraestructura") {
-                index = 2;
-                document.getElementById('optInf').style.display = '';
-                document.getElementById('optOpe').style.display = 'none';
-            }
-            document.getElementById(codigo).selectedIndex = index;
-        }  else if (codigo.indexOf("optInfS") != -1) {
-            var index = 0;
-            if (dato == "Pérdida Total (Pérdida de taller, local comercial, Planta)") {
-                index = 1;
-            } else if (dato == "Pérdida Parcial (Pérdida de maquinaria)") {
-                index = 2;
-            } else if (dato == "Pérdida Personal (Pérdida de vivienda) "){
-                index = 3;
-            }
-            document.getElementById(codigo).selectedIndex = index;
-        } else if (codigo.indexOf("optOpeS") != -1) {
-            var index = 0;
-            if (dato == "Perdida de Inventarios") {
-                index = 1;
-            } else if (dato == "Desabastecimiento (Materia Prima, Maquila, Proveedores)") {
-                index = 2;
-            } else if (dato == "Reducción de Ventas (perdidas de clientes)"){
-                index = 3;
-            } else if (dato == "Problemas de accesibilidad") {
-                index = 4;
-            } else if (dato == "Problemas de Cobranza"){
-                index = 5;
-            }
-            document.getElementById(codigo).selectedIndex = index;
-        } else if (codigo.indexOf("preg3") != -1) {
-            var index = 0;
-            if (dato == "Entre 3 a 6 meses") {
-                index = 1;
-            } else if (dato == "En un año") {
-                index = 2;
-            } else if (dato == "En dos años") {
-                index = 3;
-            } else if (dato == "Más de dos años.") {
-                index = 4;
-            } else if (dato == "No habrá recuperación de flujos por perdida total.") {
-                index = 5;
-            }
-            document.getElementById(codigo).selectedIndex = index;
-        } else if (codigo.indexOf("preg4") != -1) {
-            var index = 0;
-            if (dato == "Si") {
-                index = 1;
-                document.getElementById('optSi').style.display = '';
-            } else if (dato == "No") {
-                index = 2;
-                document.getElementById('optSi').style.display = 'none';
-            }
-            document.getElementById(codigo).selectedIndex = index;
-        } else if (codigo.indexOf("EspSeguro") != -1) {
-            document.getElementById(codigo).value = data[i];
-            document.getElementById(codigo).innerHTML = data[i];
-        }  else if (codigo.indexOf("Seguro") != -1) {
-            var index = 0;
-            if (dato == "Rimac") {
-                index = 1;
-            } else if (dato == "Pacifico") {
-                index = 2;
-            } else if (dato == "Mafre") {
-                index = 3;
-            } else if (dato == "La Positiva") {
-                index = 4;
-            } else if (dato == "Otra") {
-                index = 5;
-                document.getElementById('optOtra').style.display = '';
-            }
-            document.getElementById(codigo).selectedIndex = index;
-        } else {
-            document.getElementById(codigo).value = data[i];
-            document.getElementById(codigo).innerHTML = data[i];
-        }
-    }
 }
 function CompletarPI(lista) {
     var cantidad = lista[0];
@@ -2678,21 +2473,15 @@ function CompletarPVM(lista) {
 }
 function Descargar(){
     document.getElementById("seccion_datos_cliente").style.display = '';
-    document.getElementById("seccion_FEN1").style.display = '';
+    document.getElementById("seccion_propuesta").style.display = '';
     document.getElementById("seccion_ingresos").style.display = '';
     document.getElementById("seccion_egresos").style.display = '';
     document.getElementById("seccion_patrimonio").style.display = '';
     document.getElementById("seccion_estados").style.display = '';
-    document.getElementById("seccion_FEN2").style.display = '';
-    document.getElementById("preg2Comen").rows = '10';
-    document.getElementById("preg5").rows = '10';
     window.print();
-    document.getElementById("preg5").rows = '5';
-    document.getElementById("preg2Comen").rows = '2';
-    document.getElementById("seccion_FEN1").style.display = 'none';
+    document.getElementById("seccion_propuesta").style.display = 'none';
     document.getElementById("seccion_ingresos").style.display = 'none';
     document.getElementById("seccion_egresos").style.display = 'none';
     document.getElementById("seccion_patrimonio").style.display = 'none';
     document.getElementById("seccion_estados").style.display = 'none';
-    document.getElementById("seccion_FEN2").style.display = 'none';
 }
