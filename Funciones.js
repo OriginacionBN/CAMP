@@ -84,13 +84,23 @@ function Validar(lista){
     }
 }
 function InicializarActividad(actividad){
-    actividadG = actividad;
-    document.getElementById("actividad").disabled = false;
-    document.getElementById("actividad").options[0] = new Option("");
-    for (i = 0; i < actividad.length; i++) {
-        document.getElementById("actividad").options[i + 1] = new Option(actividad[i], actividad[i]);
+    actividadG = actividad[0];
+    excluido = actividad[1];
+    document.getElementById("actividadG").disabled = false;
+    document.getElementById("actividadG").options[0] = new Option("");
+    for (i = 0; i < actividadG.length; i++) {
+        document.getElementById("actividadG").options[i + 1] = new Option(actividadG[i], actividadG[i]);
     }
-    document.getElementById("actividad").disabled = true;
+    document.getElementById("actividadG").disabled = true;
+}
+function InicializarOficinas(oficina){
+    oficinas = oficina;
+    document.getElementById("oficina").disabled = false;
+    document.getElementById("oficina").options[0] = new Option("");
+    for (i = 0; i < oficina.length; i++) {
+        document.getElementById("oficina").options[i + 1] = new Option(oficina[i], oficina[i]);
+    }
+    document.getElementById("oficina").disabled = true;
 }
 function Cargar(){
     document.getElementById("carga").style.display = '';
