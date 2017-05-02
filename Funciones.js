@@ -7,6 +7,15 @@ function Inicializar() {
     document.getElementById("fechaVisita").value = t;
     document.getElementById("fechaVisita").innerHTML = t;
 }
+function EnviarCalculadora(){
+    var regimen = document.getElementById('regimen').value;
+    if(regimen == "Reg General"){
+        alert("Ha indicado que el cliente es Régimen General. \n Debería ir a la calculadora. Gracias");
+        document.getElementById("validado").style.display = 'none';
+    }else{
+        document.getElementById("validado").style.display = '';
+    }
+}
 function Validar(lista){
     //En la condicion debería aparecer que también se excluyan los del campo excluido lista[6]
     if(lista[0] !=0){
