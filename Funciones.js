@@ -83,7 +83,8 @@ function Validar(lista){
         }
 
         if(lista[8] == "Completado"){
-            document.getElementById('resultado').style.display = '';
+            var dictamen = document.getElementById('dictamen').value;
+            document.getElementById('resultado').innerHTML = "El cliente: " + dictamen;
             var bloqueo = document.getElementById("bloqueo");
             bloqueo.disabled = true;
         }else{
