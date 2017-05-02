@@ -92,8 +92,6 @@ function getDatosCliente() {
 }
 function getIngresos(){
     var lista = [];
-    lista.push(document.getElementById("vtas_enero").value);
-    lista.push(document.getElementById("vtas_febrero").value);
     lista.push(document.getElementById("util_bruta_Total").value);
     lista.push(document.getElementById("ventas_x_prod_Total").value);
     lista.push(document.getElementById("Ventas_Total").value);
