@@ -2414,6 +2414,11 @@ function CompletarGeneral(lista) {
                 index = 3;
             }
             document.getElementById(codigo).selectedIndex = index;
+        } else if (codigo.indexOf("oficina") != -1) {
+            var index = 0;
+            index = oficinas.indexOf(dato);
+            index = index +1;
+            document.getElementById(codigo).selectedIndex = index;
         } else if (codigo.indexOf("actividad") != -1) {
             var index = 0;
             index = actividadG.indexOf(dato);
