@@ -83,7 +83,7 @@ function Validar(lista){
         }
 
         if(lista[8] == "Completado"){
-            document.getElement('resultado').style.display = '';
+            document.getElementById('resultado').style.display = '';
             var bloqueo = document.getElementById("bloqueo");
             bloqueo.disabled = true;
         }else{
