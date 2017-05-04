@@ -101,7 +101,8 @@ function Validar(lista){
         }
         document.getElementById("carga").style.display = 'none';
     }else{
-        alert("El cliente no se encuentra en la base de campañas");
+        alert("Los clientes RER/RUS deben ser evaluados por conducto regular. Por favor enviar documentación completa según checklist");
+        //alert("El cliente no se encuentra en la base de campañas");
         document.getElementById("carga").style.display = 'none';
     }
 }
