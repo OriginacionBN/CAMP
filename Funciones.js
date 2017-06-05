@@ -342,11 +342,11 @@ function Agregar_Financimiento_LP() {
             '   <td colspan="2">' +
             '     <select class="form-control" id="Tipo_Prod_LP_' + idx + '" onchange="Calcular_Propuestas_LP();">' +
             '       <option value="0"></option>' +
-            '       <!--<option value="Leasing Mobiliario">Leasing Mobiliario</option>' +
+            '       <option value="Leasing Mobiliario">Leasing Mobiliario</option>' +
             '       <option value="Leasing Inmobiliario">Leasing Inmobiliario</option>' +
-            '       <option value="Préstamo para adquisición de inmueble">Préstamo para adquisición de inmueble</option>' +
+            '       <!--<option value="Préstamo para adquisición de inmueble">Préstamo para adquisición de inmueble</option>' +
             '       <option value="Préstamo para adquisición de bienes muebles">Préstamo para adquisición de bienes muebles</option>' +
-            '       <option value="Subrogación de deuda">Subrogación de deuda</option>' +
+            '       --><option value="Subrogación de deuda">Subrogación de deuda</option><!--' +
             '       <option value="Otro">Otro</option>-->' +
             '     </select>' +
             '   </td>' +
