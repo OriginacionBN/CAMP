@@ -416,9 +416,9 @@ function Agregar_Financimiento_CP() {
                          '       <td>' +
                          '         <select class="form-control" id="Tipo_Prod_CP_' + idx + '" onchange="Calcular_Propuestas_CP();">' +
                          '           <option value=""></option>' +
-                         '           <!--<option value="Financiamiento de Importación">Financiamiento de Importación</option>' +
+                         '           <option value="Financiamiento de Importación">Financiamiento de Importación</option>' +
                          '           <option value="Financiamiento de Exportación">Financiamiento de Exportación</option>' +
-                         '           <option value="Préstamo para capital de trabajo">Préstamo para capital de trabajo</option>-->' +
+                         '           <option value="Préstamo para capital de trabajo">Préstamo para capital de trabajo</option>' +
                          '           <option value="Tarjeta capital de trabajo">Tarjeta capital de trabajo</option>' +
                          '           <!--<option value="Descuento de letra/factura negociable">Descuento de letra/factura negociable</option>' +
                          '           <option value="Tarjeta Empresarial">Tarjeta empresarial</option>' +
