@@ -423,7 +423,7 @@ function Agregar_Financimiento_CP() {
                          '           <!--<option value="Descuento de letra/factura negociable">Descuento de letra/factura negociable</option>' +
                          '           <option value="Tarjeta Empresarial">Tarjeta empresarial</option>' +
                          '           <option value="Préstamo para adquisición de bienes muebles pequeños">Préstamo para adquisición de bienes muebles pequeños</option>' +
-                         '           <option value="Subrogación de deuda">Subrogación de deuda</option>' +
+                         '           --><option value="Subrogación de deuda">Subrogación de deuda</option><!--' +
                          '           <option value="Incremento de línea de TKT">Incremento de línea de TKT</option>' +
                          '           <option value="Incremento de línea de T/C">Incremento de línea de T/C empresarial</option>' +
                          '           <option value="Otro">Otro</option>-->' +
