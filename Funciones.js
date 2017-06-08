@@ -2480,8 +2480,8 @@ function CompletarCP(lista) {
             } else if (dato == "Préstamo para capital de trabajo") {
                 index = 3;
             } else if (dato == "Tarjeta capital de trabajo") {
-                //index = 4;
-                index = 1;
+                index = 4;
+                //index = 1;
             } else if (dato == "Descuento de letra/factura negociable") {
                 index = 5;
             } else if (dato == "Tarjeta Empresarial") {
