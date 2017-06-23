@@ -150,6 +150,7 @@ function EvaluarFiltros1(){
             estado = false;
         }
     }
+    //dkjfdf
     if(cobertura == 1.4){
         if(tipoCliente == "PJ" && nroEntidades >=4){
             estado = false;
