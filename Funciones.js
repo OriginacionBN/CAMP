@@ -2567,3 +2567,4 @@ function Descargar(){
     document.getElementById("seccion_patrimonio").style.display = 'none';
     document.getElementById("seccion_estados").style.display = 'none';
 }
+//blablabla
