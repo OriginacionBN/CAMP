@@ -1921,7 +1921,7 @@ function Calcular_Prestamo_Personal(idx) {
         document.getElementById("PP_Costo_Financiero_" + idx).value = PP_Costo_Financiero;
         PP_Amort_Capital = Number(PP_Amort_Capital);
         PP_Costo_Financiero = Number(PP_Costo_Financiero);
-        var PP_Cuota_Pagar_Aprox = PP_Amort_Capital + PP_Costo_Financiero + PP_DIFF;
+        var PP_Cuota_Pagar_Aprox = convNro(PP_Amort_Capital) + convNro(PP_Costo_Financiero) + convNro(PP_DIFF);
         PP_Cuota_Pagar_Aprox = Number(PP_Cuota_Pagar_Aprox).toFixed(0);
         document.getElementById("PP_Cuota_Pagar_Aprox_" + idx).innerHTML = Number(PP_Cuota_Pagar_Aprox).toLocaleString('en');
         document.getElementById("PP_Cuota_Pagar_Aprox_" + idx).value = PP_Cuota_Pagar_Aprox;
