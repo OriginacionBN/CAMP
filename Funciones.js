@@ -2458,6 +2458,8 @@ function CompletarLP(lista) {
     for (var i = 0; i < codigos.length; i++) {
         //document.getElementById(codigos[i]).value = data[i];
         //document.getElementById(codigos[i]).innerHTML = data[i];
+        var codigo = codigos[i];
+        var dato = data[i];
         if (codigo.indexOf("Tipo_Prod_LP_") != -1) {
             var index = 0;
             if (dato == "Leasing Mobiliario") {
