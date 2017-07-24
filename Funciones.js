@@ -2456,8 +2456,21 @@ function CompletarLP(lista) {
     var codigos = lista[1];
     var data = lista[2];
     for (var i = 0; i < codigos.length; i++) {
-        document.getElementById(codigos[i]).value = data[i];
-        document.getElementById(codigos[i]).innerHTML = data[i];
+        //document.getElementById(codigos[i]).value = data[i];
+        //document.getElementById(codigos[i]).innerHTML = data[i];
+        if (codigo.indexOf("Tipo_Prod_LP_") != -1) {
+            var index = 0;
+            if (dato == "Leasing Mobiliario") {
+                index = 1;
+            } else if (dato == "Leasing Inmobiliario") {
+                index = 2;
+            } else if (dato == "Subrogación de deuda") {
+                index = 3;
+            }document.getElementById(codigo).selectedIndex = index;
+        } else {
+            document.getElementById(codigo).value = data[i];
+            document.getElementById(codigo).innerHTML = data[i];
+        }
     }
     Calcular_Propuestas_LP();
 }
