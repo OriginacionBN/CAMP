@@ -1434,6 +1434,7 @@ function Calcular_EGP() {
     var egp_gastfinan = Calcular_Gastos_Financieros();
     var egp_gastfam = convNro(document.getElementById("egp_gastfam").value);
     var egp_otrosing = convNro(document.getElementById("egp_otrosing").value);
+    alert(egp_otrosing);
     var egp_impuestos = convNro(document.getElementById("egp_impuestos").value);
     var egp_uneta = uOperativa - egp_gastfinan - egp_gastfam + egp_otrosing - egp_impuestos;
     document.getElementById("egp_uneta").value = egp_uneta;
