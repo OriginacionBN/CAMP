@@ -81,7 +81,12 @@ function Validar(lista){
             CompletarEgresos(egr);
             
         }
-
+        
+        CompletarCronograma(deudas);
+        calcular_valor_declarado_Total();
+        Calcular_Valor_Bien_Total();
+        Calcular_EEFF();
+        
         if(lista[8] == "Completado"){
             var dictamen = document.getElementById('dictamen').value;
             document.getElementById('resultado').style.display = '';
@@ -89,11 +94,6 @@ function Validar(lista){
             var bloqueo = document.getElementById("bloqueo");
             bloqueo.disabled = true;
         }else{
-            CompletarCronograma(deudas);
-            calcular_valor_declarado_Total();
-            Calcular_Valor_Bien_Total();
-            Calcular_EEFF();
-
             document.getElementById("nroEnt").disabled = true;
             document.getElementById("buro").disabled = true;
             document.getElementById("tipoCliente").disabled = true;
