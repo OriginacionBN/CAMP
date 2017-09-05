@@ -171,12 +171,15 @@ function EvaluarFiltros2(){
     var tipoCliente = document.getElementById('tipoCliente').value;
     var edadRL = convNro(document.getElementById('edadRL').value);
     var antiguedad = convNro(document.getElementById('aExp').value);
+    var declarado = convNro(document.getElementById("informalidad").value)/100;
     if (ventas >= 30000) {
         if (egp_uneta > 0) {
             if ((tipoCliente == 'PJ' && (buro == 'G1' || buro == 'G2' || buro == 'G3' || buro == 'G4' || buro == 'G5')) || (tipoCliente == 'PNN' && (buro == 'G1' || buro == 'G2' || buro == 'G3'))) {
                 if (edadRL >= 25) {
                     if ((tipoCliente == 'PJ' && antiguedad >= 1) || (tipoCliente == 'PNN' && antiguedad >= 2)) {
-                        estado = true;
+                        if(declarado < 0.81){
+                            estado = true;
+                        }
                     }
                 }
             }
