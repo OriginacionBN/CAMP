@@ -2582,4 +2582,9 @@ function Descargar(){
     document.getElementById("seccion_patrimonio").style.display = 'none';
     document.getElementById("seccion_estados").style.display = 'none';
 }
-//blablabla
+/*******************************************************************/
+
+function AlertaInformalidad(){
+    var declarado = convNro(document.getElementById("informalidad").value)/100;
+    alert(declarado);
+}
