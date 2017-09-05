@@ -2583,8 +2583,12 @@ function Descargar(){
     document.getElementById("seccion_estados").style.display = 'none';
 }
 /*******************************************************************/
-
 function AlertaInformalidad(){
     var declarado = convNro(document.getElementById("informalidad").value)/100;
-    alert(declarado);
+    if(declarado > 0.8){
+        document.getElementById("alertaInf").display = '';
+        alert("No califica por alta informalidad, por favor envía la propuesta por circuito regular")
+    }else{
+        document.getElementById("alertaInf").display = 'none';
+    }
 }
