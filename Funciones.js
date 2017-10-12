@@ -86,7 +86,7 @@ function Validar(lista){
         calcular_valor_declarado_Total();
         Calcular_Valor_Bien_Total();
         Calcular_EEFF();
-        
+        document.getElementById("tipoCampana").value = lista[10];
         if(lista[8] == "Completado"){
             var dictamen = document.getElementById('dictamen').value;
             document.getElementById('resultado').style.display = '';
@@ -101,7 +101,7 @@ function Validar(lista){
         }
         document.getElementById("carga").style.display = 'none';
     }else{
-        alert("Los clientes RER/RUS deben ser evaluados por conducto regular. Por favor enviar documentación completa según checklist");
+        alert("Los clientes deben ser evaluados por conducto regular. Por favor enviar documentación completa según checklist");
         //alert("El cliente no se encuentra en la base de campañas");
         document.getElementById("carga").style.display = 'none';
     }
