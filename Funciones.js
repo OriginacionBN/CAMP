@@ -2408,7 +2408,10 @@ function InformacionFinalizar() {
         listaTodo.push(getEgresos());
         listaTodo.push(getPatrimonioInmueble());
         listaTodo.push(getPatrimonioVehMaq());
-        alert(dictamen);
+        var tipoCampana = document.getElementById('tipoCampana').value;
+        if(tipoCampana != "Aprobado"){
+            alert(dictamen);
+        }
         return listaTodo;
     }else{
         return null;
