@@ -8,7 +8,7 @@ function Inicializar() {
     document.getElementById("fechaVisita").innerHTML = t;
 }
 function EnviarCalculadora(){
-    var regimen = document.getElementById('regimen').value;
+    /*var regimen = document.getElementById('regimen').value;
     if(regimen == "Reg General"){
         alert("Ha indicado que el cliente es Régimen General. \n Debería ir a la calculadora. Gracias");
         document.getElementById("validado").style.display = 'none';
@@ -22,7 +22,7 @@ function EnviarCalculadora(){
         document.getElementById("btn_Calculadora").style.display = 'none';
         document.getElementById("boton_finalizar").style.display = '';
         document.getElementById("boton_inicio").style.display = 'none';
-    }
+    }*/
 }
 function Validar(lista){
     //En la condicion debería aparecer que también se excluyan los del campo excluido lista[6]
