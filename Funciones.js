@@ -88,9 +88,12 @@ function Validar(lista){
         Calcular_EEFF();
         document.getElementById("tipoCampana").value = lista[10];
         if(lista[8] == "Completado"){
-            var dictamen = document.getElementById('dictamen').value;
-            document.getElementById('resultado').style.display = '';
-            document.getElementById('resultado').innerHTML = "El cliente: " + dictamen;
+            var tipoCampana = document.getElementById('tipoCampana').value;
+            if(tipoCampana != "Aprobado"){
+                var dictamen = document.getElementById('dictamen').value;
+                document.getElementById('resultado').style.display = '';
+                document.getElementById('resultado').innerHTML = "El cliente: " + dictamen;
+            }
             var bloqueo = document.getElementById("bloqueo");
             bloqueo.disabled = true;
         }else{
