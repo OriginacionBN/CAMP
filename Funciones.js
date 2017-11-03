@@ -948,7 +948,7 @@ function getBalanceGeneral() {
     var total_activo_cte = convNro(document.getElementById('total_activo_cte').value);
     lista.push(total_activo_cte);
     var total_activo_cte_porc = (document.getElementById('total_activo_cte_porc').value);
-    lista.push(total_activo_cte_porc);
+    //lista.push(total_activo_cte_porc);
 
     var bg_12 = convNro(document.getElementById('bg_12').value);
     lista.push(bg_12);
@@ -970,7 +970,7 @@ function getBalanceGeneral() {
     var total_activo_no_cte = convNro(document.getElementById('total_activo_no_cte').value);
     lista.push(total_activo_no_cte);
     var total_activo_no_cte_porc = (document.getElementById('total_activo_no_cte_porc').value);
-    lista.push(total_activo_no_cte_porc);
+    //lista.push(total_activo_no_cte_porc);
 
     var total_activo = convNro(document.getElementById('total_activo').value);
     lista.push(total_activo);
@@ -991,7 +991,7 @@ function getBalanceGeneral() {
     var total_pasivo_cte = convNro(document.getElementById('total_pasivo_cte').value);
     lista.push(total_pasivo_cte);
     var total_pasivo_cte_porc = (document.getElementById('total_pasivo_cte_porc').value);
-    lista.push(total_pasivo_cte_porc);
+    //lista.push(total_pasivo_cte_porc);
 
     var bg_19 = convNro(document.getElementById('bg_19').value);
     lista.push(bg_19);
@@ -1009,12 +1009,12 @@ function getBalanceGeneral() {
     var total_pasivo_no_cte = convNro(document.getElementById('total_pasivo_no_cte').value);
     lista.push(total_pasivo_no_cte);
     var total_pasivo_no_cte_porc = (document.getElementById('total_pasivo_no_cte_porc').value);
-    lista.push(total_pasivo_no_cte_porc);
+    //lista.push(total_pasivo_no_cte_porc);
 
     var total_pasivo = convNro(document.getElementById('total_pasivo').value);
     lista.push(total_pasivo);
     var total_pasivo_porc = (document.getElementById('total_pasivo_porc').value);
-    lista.push(total_pasivo_porc);
+    //lista.push(total_pasivo_porc);
 
     var patrimonio = convNro(document.getElementById('patrimonio').value);
     lista.push(patrimonio);
