@@ -1442,6 +1442,11 @@ function Calcular_EGP() {
     var egp_otrosing = convNro(document.getElementById("egp_otrosing").value);
     var egp_impuestos = convNro(document.getElementById("egp_impuestos").value);
     var egp_uneta = uOperativa - egp_gastfinan - egp_gastfam + egp_otrosing - egp_impuestos;
+    if(egp_uneta <0){
+        document.getElementById("alertaUt").style.display = '';
+    }else{
+        document.getElementById("alertaUt").style.display = 'none';
+    }
     document.getElementById("egp_uneta").value = egp_uneta;
     document.getElementById("egp_uneta").innerHTML = Number(Number(egp_uneta).toFixed(0)).toLocaleString('en');
     Calcular_Porcentajes_EGP();
@@ -2596,7 +2601,7 @@ function AlertaInformalidad(){
     var declarado = convNro(document.getElementById("informalidad").value)/100;
     if(declarado > 0.8){
         document.getElementById("alertaInf").style.display = '';
-        alert("No califica por alta informalidad, por favor envía la propuesta por circuito regular")
+        //alert("No califica por alta informalidad, por favor envía la propuesta por circuito regular")
     }else{
         document.getElementById("alertaInf").style.display = 'none';
     }
