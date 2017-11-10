@@ -2599,9 +2599,10 @@ function Descargar(){
 /*******************************************************************/
 function AlertaInformalidad(){
     var declarado = convNro(document.getElementById("informalidad").value)/100;
-    if(declarado > 0.8){
+    var tipoCampana = document.getElementById('tipoCampana').value;
+    if(declarado > 0.8 && tipoCampana != "Aprobado"){
         document.getElementById("alertaInf").style.display = '';
-        //alert("No califica por alta informalidad, por favor envía la propuesta por circuito regular")
+        alert("No califica por alta informalidad, por favor envía la propuesta por circuito regular")
     }else{
         document.getElementById("alertaInf").style.display = 'none';
     }
