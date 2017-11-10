@@ -2353,8 +2353,9 @@ function CompletarCronograma(datos){
     document.getElementById("TC_Linea_Utilizada_0").value = D_TUSADA;
     document.getElementById("TC_Linea_Utilizada_0").innerHTML = convNro(D_TUSADA).toLocaleString('en');
     D_NOUSADA = datos[12];
-    document.getElementById("TC_Linea_Total_0").value = D_TUSADA+D_NOUSADA;
-    document.getElementById("TC_Linea_Total_0").innerHTML = convNro(D_TUSADA+D_NOUSADA).toLocaleString('en');
+    var TC_LT_0 = convNro(D_TUSADA)+convNro(D_NOUSADA);
+    document.getElementById("TC_Linea_Total_0").value = conv(TC_LT_0);
+    document.getElementById("TC_Linea_Total_0").innerHTML = convNro(TC_LT_0).toLocaleString('en');
 
     Calcular_Linea_Tarjeta_Total();
     Calcular_Prestamo_Cancelable_Total();
