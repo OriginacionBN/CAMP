@@ -180,7 +180,7 @@ function EvaluarFiltros2(){
             if ((tipoCliente == 'PJ' && (buro == 'G1' || buro == 'G2' || buro == 'G3' || buro == 'G4' || buro == 'G5')) || (tipoCliente == 'PNN' && (buro == 'G1' || buro == 'G2' || buro == 'G3'))) {
                 if (edadRL >= 25) {
                     if ((tipoCliente == 'PJ' && antiguedad >= 1) || (tipoCliente == 'PNN' && antiguedad >= 2)) {
-                        if(declarado < 0.81){
+                        if(declarado < 0.91){
                             estado = true;
                         }
                     }
@@ -2601,7 +2601,7 @@ function Descargar(){
 function AlertaInformalidad(){
     var declarado = convNro(document.getElementById("informalidad").value)/100;
     var tipoCampana = document.getElementById('tipoCampana').value;
-    if(declarado > 0.8 && tipoCampana != "Aprobado"){
+    if(declarado > 0.9 && tipoCampana != "Aprobado"){
         document.getElementById("alertaInf").style.display = '';
         alert("No califica por alta informalidad, por favor envía la propuesta por circuito regular")
     }else{
