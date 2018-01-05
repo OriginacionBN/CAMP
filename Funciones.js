@@ -89,11 +89,11 @@ function Validar(lista){
         document.getElementById("tipoCampana").value = lista[10];
         if(lista[8] == "Completado"){
             var tipoCampana = document.getElementById('tipoCampana').value;
-            if(tipoCampana != "Aprobado"){
-                var dictamen = document.getElementById('dictamen').value;
-                document.getElementById('resultado').style.display = '';
-                document.getElementById('resultado').innerHTML = "El cliente: " + dictamen;
-            }
+            
+            var dictamen = document.getElementById('dictamen').value;
+            document.getElementById('resultado').style.display = '';
+            document.getElementById('resultado').innerHTML = "El cliente: " + dictamen;
+            
             var bloqueo = document.getElementById("bloqueo");
             bloqueo.disabled = true;
         }else{
@@ -137,9 +137,24 @@ function Dictaminar(){
         dictamen = "Califica";
     }else{
         dictamen = "No califica";
+        dictamen = EvaluarFiltros0();
     }
     document.getElementById("dictamen").value = dictamen;
     return dictamen;
+}
+
+function EvaluarFiltros0(){
+    var tipoCampana = document.getElementById('tipoCampana').value;
+    var ventas = convNro(document.getElementById('egp_ventas').value);
+    var egp_uneta = convNro(document.getElementById('egp_uneta').value);
+    if(tipoCampana != "Aprobado"){
+        if(ventas >= 30000){
+            if(egp_uneta > 0){
+                return "Califica"
+            }
+        }
+    }
+    return "No califica"
 }
 function EvaluarFiltros1(){
     var estado = true;
@@ -153,7 +168,6 @@ function EvaluarFiltros1(){
             estado = false;
         }
     }
-    //dkjfdf
     if(cobertura == 1.4){
         if(tipoCliente == "PJ" && nroEntidades >=4){
             estado = false;
@@ -2418,9 +2432,7 @@ function InformacionFinalizar() {
         listaTodo.push(getPatrimonioInmueble());
         listaTodo.push(getPatrimonioVehMaq());
         var tipoCampana = document.getElementById('tipoCampana').value;
-        if(tipoCampana != "Aprobado"){
-            alert(dictamen);
-        }
+        alert(dictamen);
         return listaTodo;
     }else{
         return null;
