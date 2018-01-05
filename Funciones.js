@@ -2602,6 +2602,7 @@ function Descargar(){
     document.getElementById("seccion_egresos").style.display = '';
     document.getElementById("seccion_patrimonio").style.display = '';
     document.getElementById("seccion_estados").style.display = '';
+    document.getElementById('resultado').style.display = '';
     window.print();
     document.getElementById("seccion_propuesta").style.display = 'none';
     document.getElementById("seccion_ingresos").style.display = 'none';
@@ -2614,7 +2615,7 @@ function AlertaInformalidad(){
     var declarado = convNro(document.getElementById("informalidad").value)/100;
     var tipoCampana = document.getElementById('tipoCampana').value;
     if(declarado > 0.9 && tipoCampana != "Aprobado"){
-        document.getElementById("alertaInf").style.display = '';
+        document.getElementById("alertaInf").style.display = 'none';
         alert("No califica por alta informalidad, por favor envía la propuesta por circuito regular")
     }else{
         document.getElementById("alertaInf").style.display = 'none';
