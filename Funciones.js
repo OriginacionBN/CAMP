@@ -147,7 +147,7 @@ function EvaluarFiltros0(){
     var tipoCampana = document.getElementById('tipoCampana').value;
     var ventas = convNro(document.getElementById('egp_ventas').value);
     var egp_uneta = convNro(document.getElementById('egp_uneta').value);
-    if(tipoCampana != "Aprobado"){
+    if(tipoCampana == "Aprobado"){
         if(ventas >= 30000){
             if(egp_uneta > 0){
                 return "Califica"
