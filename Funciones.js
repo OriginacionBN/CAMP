@@ -1160,7 +1160,7 @@ function Calcular_Inventarios() {
     return convNro(inventarios);
 }
 function Calcular_Activos_CP() {
-    var idx = Number(document.getElementById("cant_finan_CP").value);
+    /*var idx = Number(document.getElementById("cant_finan_CP").value);
     var bg_6 = 0;
     for (var i = 0; i < idx; i++) {
         var Prod_CP = document.getElementById("Tipo_Prod_CP_" + (i + 1)).value;
@@ -1172,7 +1172,8 @@ function Calcular_Activos_CP() {
     }
     document.getElementById("bg_6").value = bg_6;
     document.getElementById("bg_6").innerHTML = Number(bg_6).toLocaleString('en');
-    return convNro(bg_6);
+    return convNro(bg_6);*/
+    return convNro(0);
 }
 function Calcular_Linea_No_Utilizada() {
     var bg_11 = 0;
