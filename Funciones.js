@@ -2532,7 +2532,7 @@ function CompletarCP(lista) {
             } else if (dato == "Préstamo para adquisición de bienes muebles pequeños") {
                 index = 7;
             } else if (dato == "Subrogación de deuda") {
-                index = 8;
+                index = 5;
             } else if (dato == "Incremento de línea de TKT") {
                 index = 9;
             } else if (dato == "Incremento de línea de T/C") {
