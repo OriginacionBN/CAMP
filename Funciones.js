@@ -1163,7 +1163,11 @@ function Calcular_Activos_CP() {
     var idx = Number(document.getElementById("cant_finan_CP").value);
     var bg_6 = 0;
     for (var i = 0; i < idx; i++) {
-        var Finan_CP = convNro(document.getElementById("Finan_CP_" + (i + 1)).value);
+        var Prod_CP = document.getElementById("Tipo_Prod_CP_" + (i + 1)).value;
+        var Finan_CP = 0;
+        if(Prod_CP <> "" || Prod_CP <> "Subrogación de deuda"){
+            Finan_CP = convNro(document.getElementById("Finan_CP_" + (i + 1)).value);
+        }
         bg_6 = bg_6 + Finan_CP;
     }
     document.getElementById("bg_6").value = bg_6;
