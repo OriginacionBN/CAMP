@@ -1164,7 +1164,6 @@ function Calcular_Activos_CP() {
     var bg_6 = 0;
     for (var i = 0; i < idx; i++) {
         var Prod_CP = document.getElementById("Tipo_Prod_CP_" + (i + 1)).value;
-        alert(Prod_CP);
         var Finan_CP = 0;
         if(Prod_CP != "Subrogación de deuda"){
             Finan_CP = convNro(document.getElementById("Finan_CP_" + (i + 1)).value);
