@@ -1203,18 +1203,18 @@ function Calcular_Activos_No_Corrientes() {
 function Calcular_Activos_LP() {
     var idx = Number(document.getElementById("cant_finan_LP").value);
     var actLP = 0;
-    // for (var i = 0; i < idx; i++) {
-    //     var Precio_Venta = convNro(document.getElementById("Precio_Venta_" + (i + 1)).value);
-    //     actLP = actLP + Precio_Venta;
-    // }
     for (var i = 0; i < idx; i++) {
-        var Prod_LP = document.getElementById("Tipo_Prod_LP_" + (i + 1)).value;
-        var Precio_Venta = 0;
-        if(Prod_LP != "Subrogación de deuda"){
-            Precio_Venta = convNro(document.getElementById("Precio_Venta_" + (i + 1)).value);
-        }
+        var Precio_Venta = convNro(document.getElementById("Precio_Venta_" + (i + 1)).value);
         actLP = actLP + Precio_Venta;
     }
+    // for (var i = 0; i < idx; i++) {
+    //     var Prod_LP = document.getElementById("Tipo_Prod_LP_" + (i + 1)).value;
+    //     var Precio_Venta = 0;
+    //     if(Prod_LP != "Subrogación de deuda"){
+    //         Precio_Venta = convNro(document.getElementById("Precio_Venta_" + (i + 1)).value);
+    //     }
+    //     actLP = actLP + Precio_Venta;
+    // }
     document.getElementById("bg_12").value = actLP;
     document.getElementById("bg_12").innerHTML = Number(actLP).toLocaleString('en');
     return convNro(actLP);
