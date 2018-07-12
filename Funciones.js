@@ -2461,11 +2461,14 @@ function CompletarGeneral(lista) {
             var index = 0;
             if (dato == "Reg General") {
                 index = 1;
-            } else if (dato == "RER") {
+            } else if (dato == "RMT") {
                 index = 2;
-            } else if (dato == "RUS") {
+            } else if (dato == "RER") {
                 index = 3;
+            } else if (dato == "RUS") {
+                index = 4;
             }
+            
             document.getElementById(codigo).selectedIndex = index;
         } else if (codigo.indexOf("oficina") != -1) {
             var index = 0;
