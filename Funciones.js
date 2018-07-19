@@ -440,6 +440,7 @@ function Agregar_Financimiento_CP() {
                          '           <option value="Financiamiento de Importación">Financiamiento de Importación</option>' +
                          '           <option value="Financiamiento de Exportación">Financiamiento de Exportación</option>' +
                          '           <option value="Préstamo para capital de trabajo">Préstamo para capital de trabajo</option>' +
+                         '           <option value="Línea Préstamo para capital de trabajo">Línea Préstamo para capital de trabajo</option>' +
                          '           <option value="Tarjeta capital de trabajo">Tarjeta capital de trabajo</option>' +
                          '           <!--<option value="Descuento de letra/factura negociable">Descuento de letra/factura negociable</option>' +
                          '           <option value="Tarjeta Empresarial">Tarjeta empresarial</option>' +
