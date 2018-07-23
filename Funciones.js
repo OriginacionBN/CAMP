@@ -2538,23 +2538,26 @@ function CompletarCP(lista) {
                 index = 2;
             } else if (dato == "Préstamo para capital de trabajo") {
                 index = 3;
-            } else if (dato == "Tarjeta capital de trabajo") {
+            } else if (dato == "Línea Préstamo para capital de trabajo") {
                 index = 4;
                 //index = 1;
+            } else if (dato == "Tarjeta capital de trabajo") {
+                index = 5;
+                //index = 1;
             } else if (dato == "Descuento de letra/factura negociable") {
-                index = 5;
-            } else if (dato == "Tarjeta Empresarial") {
                 index = 6;
-            } else if (dato == "Préstamo para adquisición de bienes muebles pequeños") {
+            } else if (dato == "Tarjeta Empresarial") {
                 index = 7;
+            } else if (dato == "Préstamo para adquisición de bienes muebles pequeños") {
+                index = 8;
             } else if (dato == "Subrogación de deuda") {
-                index = 5;
+                index = 6;
             } else if (dato == "Incremento de línea de TKT") {
-                index = 9;
+                index = 7;
             } else if (dato == "Incremento de línea de T/C") {
-                index = 10;
+                index = 8;
             } else if (dato == "Otro") {
-                index = 11;
+                index = 12;
             }document.getElementById(codigo).selectedIndex = index;
         } else {
             document.getElementById(codigo).value = data[i];
