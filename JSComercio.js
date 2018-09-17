@@ -150,31 +150,35 @@ function getEgresos(){
 function AgregarProducto() {
     var table = document.getElementById("tablaProductos");
     var idx = table.rows.length - 1;
-    var row = table.insertRow(idx);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    var cell4 = row.insertCell(3);
-    var cell5 = row.insertCell(4);
-    var cell6 = row.insertCell(5);
-    var cell7 = row.insertCell(6);
-    cell1.innerHTML = '<input class="form-control" id = "Prod' + idx + '"/>';
-    cell2.innerHTML = '<input class="form-control" id="unidades_vendidas_' + idx + '" onkeyup=";validarNumero(id);calcular_ingresos_comercio();"/>';
-    cell3.innerHTML = '<select class="form-control" id="unidades_x_presentacion_' + idx + '">' +
-            '<option value="0"></option>' +
-            '<option value="Galones">Galones</option>' +
-            '<option value="Kilos">Kilos</option>' +
-            '<option value="Litros">Litros</option>' +
-            '<option value="Metros">Metros</option>' +
-            '<option value="Pies">Pies</option>' +
-            '<option value="Rollos">Rollos</option>' +
-            '<option value="Sacos">Sacos</option>' +
-            '<option value="Otros">Otros</option>' +
-            '</select>';
-    cell4.innerHTML = '<input class="form-control" id="pcompra_' + idx + '" onkeyup="validarNumero(id);calcular_ingresos_comercio();"/>';
-    cell5.innerHTML = '<input class="form-control" id="pventa_' + idx + '" onkeyup="validarNumero(id);calcular_ingresos_comercio();"/>';
-    cell6.innerHTML = '<div id="util_bruta_' + idx + '">';
-    cell7.innerHTML = '<div id="ventas_x_prod_' + idx + '">';
+    if(idx < 11){
+        var row = table.insertRow(idx);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+        cell1.innerHTML = '<input class="form-control" id = "Prod' + idx + '"/>';
+        cell2.innerHTML = '<input class="form-control" id="unidades_vendidas_' + idx + '" onkeyup=";validarNumero(id);calcular_ingresos_comercio();"/>';
+        cell3.innerHTML = '<select class="form-control" id="unidades_x_presentacion_' + idx + '">' +
+                '<option value="0"></option>' +
+                '<option value="Galones">Galones</option>' +
+                '<option value="Kilos">Kilos</option>' +
+                '<option value="Litros">Litros</option>' +
+                '<option value="Metros">Metros</option>' +
+                '<option value="Pies">Pies</option>' +
+                '<option value="Rollos">Rollos</option>' +
+                '<option value="Sacos">Sacos</option>' +
+                '<option value="Otros">Otros</option>' +
+                '</select>';
+        cell4.innerHTML = '<input class="form-control" id="pcompra_' + idx + '" onkeyup="validarNumero(id);calcular_ingresos_comercio();"/>';
+        cell5.innerHTML = '<input class="form-control" id="pventa_' + idx + '" onkeyup="validarNumero(id);calcular_ingresos_comercio();"/>';
+        cell6.innerHTML = '<div id="util_bruta_' + idx + '">';
+        cell7.innerHTML = '<div id="ventas_x_prod_' + idx + '">';
+    }else{
+        alert("Máximo permitido 10 productos");
+    }
 }
 function EliminarProducto() {
     var table = document.getElementById("tablaProductos")
