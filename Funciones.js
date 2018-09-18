@@ -194,7 +194,7 @@ function EvaluarFiltros2(){
             if ((tipoCliente == 'PJ' && (buro == 'G1' || buro == 'G2' || buro == 'G3' || buro == 'G4' || buro == 'G5')) || (tipoCliente == 'PNN' && (buro == 'G1' || buro == 'G2' || buro == 'G3' || buro == 'G4' || buro == 'G5'))) {
                 if (edadRL >= 25) {
                     if ((tipoCliente == 'PJ' && antiguedad >= 1) || (tipoCliente == 'PNN' && antiguedad >= 2)) {
-                        if(declarado < 0.96){
+                        if(declarado < 0.92){
                             estado = true;
                         }
                     }
